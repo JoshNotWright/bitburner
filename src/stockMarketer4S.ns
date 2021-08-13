@@ -23,7 +23,7 @@ function sellShorts(ns, stockSymbol) {
     corpus += stockInfo.sharesShort * (stockInfo.avgPriceShort - shortSellValue) - 2 * commission
     ns.print(
       `[${localeHHMMSS()}][${stockSymbol}] Sold ${stockInfo.sharesShort} shorts for ${ns.nFormat(shortSellValue, '$0.000a')}. Profit: ${ns.nFormat(
-        stockInfo.sharesLong * (stockInfo.avgPriceShort - shortSellValue) - 2 * commission,
+        stockInfo.sharesShort * (stockInfo.avgPriceShort - shortSellValue) - 2 * commission,
         '$0.000a'
       )}`
     )
